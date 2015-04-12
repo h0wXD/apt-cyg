@@ -1,6 +1,10 @@
 apt-cyg
 =======
 
+Fork of [apt-cyg](https://github.com/transcode-open/apt-cyg/) from https://github.com/transcode-open/apt-cyg/
+
+Intro
+=====
 apt-cyg is a Cygwin package manager. It includes a command-line installer for
 Cygwin which cooperates with Cygwin Setup and uses the same repository.
 
@@ -65,13 +69,19 @@ packages.
 </table>
 
 Quick start
------------
+===========
 
 apt-cyg is a simple script. To install:
 
-    lynx -source rawgit.com/transcode-open/apt-cyg/master/apt-cyg > apt-cyg
-    install apt-cyg /bin
+    # lynx -source rawgit.com/h0wXD/apt-cyg/master/apt-cyg > apt-cyg
+    # install apt-cyg /bin
 
+Setup alias to configure repositories (.bashrc)
+
+	alias apt-cyg='apt-cyg -m http://mirrors.kernel.org/sources.redhat.com/cygwin'
+	alias apt-cyp='apt-cyg -m http://mirrors.kernel.org/sources.redhat.com/cygwinports'
+	
 Example use of apt-cyg:
 
-    apt-cyg install nano
+    # apt-cyg install nano
+	# apt-cyp install ..
