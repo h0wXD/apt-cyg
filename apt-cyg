@@ -317,9 +317,10 @@ function download {
   bn=$(basename $2)
 
   # check the md5
-  digest=$4
   mkdir -p $cache/$mirrordir/$dn
   cd $cache/$mirrordir/$dn
+  wget -nc $mirror/$dn/md5.sum
+  digest=`cat "md5.sum" | awk "/$bn$/" | cut -d' ' -f1`
   if ! test -e $bn || ! md5sum -c <<< "$digest $bn"
   then
     wget -O $bn $mirror/$dn/$bn
